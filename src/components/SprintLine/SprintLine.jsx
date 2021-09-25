@@ -24,11 +24,15 @@ const SprintArrow = styled.div`
   }
 `;
 
-const SprintLine = ({ id, cards }) => {
+const SprintLine = ({ sprintPoints, id, cards }) => {
+  const cardPoints = cards.reduce((acc, card) => acc + card.cout, 0);
+
   return (
     <>
       <div>
-        <h1>Sprint {id}</h1>
+        <h1>
+          Sprint {id} ({cardPoints} /{sprintPoints}pts)
+        </h1>
         <SprintArrow />
       </div>
 
