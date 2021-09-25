@@ -5,7 +5,7 @@ import styled from "styled-components";
 const PostIt = styled.div`
   width: 100px;
   height: 100px;
-  padding: 2%;
+  padding: 20px;
   background-color: ${props => (props.isDragging ? "lightgreen" : "#ffffa5")};
   box-shadow: 2px 4px 6px #444;
   -moz-box-shadow: 2px 4px 6px #444;
