@@ -1,8 +1,10 @@
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import React from "react";
 
 import { DragDropContext } from "react-beautiful-dnd";
+import { useParams } from "react-router";
 import styled from "styled-components";
 import { addSprint, deleteSprint, onDragEnd } from "./utils";
 import Backlog from "/components/Backlog/Backlog";
@@ -28,11 +30,15 @@ const FlexCenter = styled.div`
 `;
 
 const Jeux = () => {
-  const { itemsMap, setItemsMap, sprintPoints, postitList } = useScrumJeux();
+  const { gameId } = useParams();
+  const { itemsMap, setItemsMap, sprintPoints, postitList } = useScrumJeux(gameId);
 
   return (
     <>
-      <div>Jeu 1 : Creer un projet web</div>
+      <div>Jeu {gameId} :</div>
+      <Grid container justifyContent="flex-end" alignItems="right">
+        <Button variant="contained">Envoyer la solution</Button>
+      </Grid>
       <CardContext.Provider value={postitList}>
         <DragDropContext onDragEnd={onDragEnd(itemsMap, setItemsMap, sprintPoints)}>
           <SprintWrapper>

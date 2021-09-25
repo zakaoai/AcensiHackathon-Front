@@ -6,9 +6,10 @@ const SiteMap = {
   SCRUM: {
     path: "/app/scrum",
     label: "Scrum",
-    INTRO: { path: "/intro", label: "Introduction jeux scrum" },
-    TUTO: { path: "/tuto", label: "Tuto jeux scrum" },
-    JEUX: { path: "/jeux/:jeuId", label: "Jeux scrum" }
+    INTRO: { path: "/app/scrum/intro/:slideId", label: "Introduction jeux scrum" },
+    TUTO: { path: "/app/scrum/tuto", label: "Tuto jeux scrum" },
+    JEUX: { path: "/app/scrum/jeux/:gameId", label: "Jeux scrum" },
+    SOLUTION: { path: "/app/scrum/solution/:gameId", label: "Solution jeux scrum" }
   }
 };
 

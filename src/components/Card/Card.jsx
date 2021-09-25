@@ -32,23 +32,31 @@ const Footer = styled.div`
   width: 100%;
 `;
 
+const PostItCard = ({ libelle, cout, ...others }) => (
+  <PostIt {...others}>
+    <Content>{libelle}</Content>
+    <Footer>{cout} Pts</Footer>
+  </PostIt>
+);
+
 const Card = ({ id, libelle, cout, lifePoint, index }) => {
   const isDragDisabled = lifePoint === 0;
   return (
     <Draggable key={id} draggableId={`${id}`} index={index} isDragDisabled={isDragDisabled}>
       {(provided, snapshot) => (
-        <PostIt
+        <PostItCard
+          libelle={libelle}
+          cout={cout}
           ref={provided.innerRef}
           isDragging={snapshot.isDragging}
           isDragDisabled={isDragDisabled}
           {...provided.draggableProps}
-          {...provided.dragHandleProps}>
-          <Content>{libelle}</Content>
-          <Footer>{cout} Pts</Footer>
-        </PostIt>
+          {...provided.dragHandleProps}
+        />
       )}
     </Draggable>
   );
 };
 
 export default Card;
+export { PostItCard };

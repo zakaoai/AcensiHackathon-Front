@@ -44,3 +44,4 @@ const CardContainer = ({ id, cards, currentCardPoints, maxSprintPoints }) => {
 };
 
 export default CardContainer;
+export { PostItList };
