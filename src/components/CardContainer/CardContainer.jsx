@@ -35,7 +35,7 @@ const CardContainer = ({ id, cards, currentCardPoints, maxSprintPoints }) => {
             id={id}
             {...provided.droppableProps}>
             {cards.map((item, index) => (
-              <Card key={item.id} index={index} id={item.id} libelle={item.libelle} cout={item.cout} />
+              <Card key={item.id} index={index} {...item} />
             ))}
             {provided.placeholder}
           </PostItList>

@@ -36,6 +36,7 @@ const CardContext = createContext([]);
 
 const Scrum = () => {
   const sprintPoints = 60;
+  const cardLifePoint = 3;
   const postitList = [
     { id: "1", libelle: "Post it 1", cout: 10, ordre: 1 },
     { id: "2", libelle: "Post it 2", cout: 10, ordre: 2 },
@@ -43,7 +44,7 @@ const Scrum = () => {
     { id: "4", libelle: "Post it 4", cout: 40, ordre: 4 },
     { id: "5", libelle: "Post it 5", cout: 30, ordre: 5 },
     { id: "6", libelle: "Post it 6", cout: 10, ordre: 6 }
-  ];
+  ].map(postit => ({ ...postit, lifePoint: cardLifePoint }));
 
   const [itemsMap, setItemsMap] = useState({ 1: [], backlog: postitList });
 
@@ -54,13 +55,21 @@ const Scrum = () => {
     const current = [...itemsMap[source.droppableId]];
 
     if (source.droppableId === destination.droppableId) {
-      setItemsMap({ ...itemsMap, [source.droppableId]: reorder(current, source.index, destination.index) });
+      const result = Array.from(current);
+      const [removed] = result.splice(source.index, 1);
+      if (source.droppableId !== "backlog") {
+        removed.lifePoint -= 1;
+      }
+      result.splice(destination.index, 0, removed);
+
+      setItemsMap({ ...itemsMap, [source.droppableId]: result });
     } else {
       const next = [...itemsMap[destination.droppableId]];
       const target = current[source.index];
 
       const cardPoints = next.reduce((acc, card) => acc + card.cout, 0);
       if (cardPoints + target.cout <= sprintPoints) {
+        target.lifePoint -= 1;
         // remove from original
         current.splice(source.index, 1);
         // insert into next
