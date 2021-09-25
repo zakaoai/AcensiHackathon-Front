@@ -16,9 +16,8 @@ const StickyBottom = styled.div`
 const Backlog = ({ id, cards }) => {
   return (
     <StickyBottom>
-      <div>
-        <h1>Backlog</h1>
-      </div>
+      <h1>Backlog</h1>
+
       <CardContainer id={id} cards={cards} />
     </StickyBottom>
   );
