@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import { DragDropContext } from "react-beautiful-dnd";
+import styled from "styled-components";
 import Backlog from "/components/Backlog/Backlog";
 
 import CardContainer from "/components/CardContainer/CardContainer";
@@ -13,6 +14,10 @@ const reorder = (list, startIndex, endIndex) => {
 
   return result;
 };
+
+const SprintWrapper = styled.div`
+  padding-bottom: 265px;
+`;
 
 const Scrum = () => {
   const postitList = [
@@ -65,11 +70,13 @@ const Scrum = () => {
         <h1>Scrum</h1>
       </div>
       <DragDropContext onDragEnd={onDragEnd}>
-        {Object.keys(itemsMap)
-          .filter(key => key !== "backlog")
-          .map(key => (
-            <SprintLine internalScroll key={key} id={key} cards={itemsMap[key]} />
-          ))}
+        <SprintWrapper>
+          {Object.keys(itemsMap)
+            .filter(key => key !== "backlog")
+            .map(key => (
+              <SprintLine internalScroll key={key} id={key} cards={itemsMap[key]} />
+            ))}
+        </SprintWrapper>
         <Backlog id="backlog" cards={itemsMap.backlog} />
       </DragDropContext>
     </>
