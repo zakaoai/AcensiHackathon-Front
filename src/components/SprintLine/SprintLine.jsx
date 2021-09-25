@@ -1,7 +1,9 @@
 import React from "react";
+import IconButton from "@mui/material/IconButton";
 
 import styled from "styled-components";
-
+import DeleteIcon from "@mui/icons-material/Delete";
+import { red } from "@mui/material/colors";
 import CardContainer from "../CardContainer/CardContainer";
 
 const SprintArrow = styled.div`
@@ -24,17 +26,29 @@ const SprintArrow = styled.div`
   }
 `;
 
-const SprintLine = ({ sprintPoints, id, cards }) => {
+const FlexBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+
+const SprintLine = ({ sprintPoints, id, cards, deleteSprint }) => {
   const cardPoints = cards.reduce((acc, card) => acc + card.cout, 0);
 
   return (
     <>
-      <div>
+      <FlexBox>
         <h1>
           Sprint {id} ({cardPoints} /{sprintPoints}pts)
         </h1>
+
+        <IconButton aria-label="delete" onClick={deleteSprint(id)}>
+          <DeleteIcon sx={{ fontSize: 40, color: red[500] }} />
+        </IconButton>
+
         <SprintArrow />
-      </div>
+      </FlexBox>
 
       <CardContainer id={id} cards={cards} />
     </>

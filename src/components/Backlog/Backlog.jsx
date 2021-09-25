@@ -5,7 +5,7 @@ import styled from "styled-components";
 import CardContainer from "../CardContainer/CardContainer";
 
 const StickyBottom = styled.div`
-  background-color: lightgrey;
+  background-color: #f5f5f5;
   position: -webkit-sticky;
   position: fixed;
   left: 0;

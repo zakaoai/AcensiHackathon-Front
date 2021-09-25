@@ -37,6 +37,7 @@ const Scrum = () => {
   const postitList = [{ id: "1", libelle: "Post it 1", cout: 10, ordre: 1 }];
 
   const [itemsMap, setItemsMap] = useState({ 1: [], backlog: postitList });
+
   const onDragEnd = ({ source, destination }) => {
     if (!destination) {
       return;
@@ -62,6 +63,26 @@ const Scrum = () => {
     setItemsMap({ ...itemsMap, [`${Object.keys(itemsMap).length}`]: [] });
   };
 
+  const deleteSprint = id => () => {
+    const { backlog } = itemsMap;
+    const newEntries = Object.entries(itemsMap)
+      .filter(([key]) => key !== "backlog")
+      .reduce((acc, [key, value]) => {
+        if (key > id) {
+          acc[key - 1] = value;
+        }
+        if (key === id) {
+          backlog.push(...value);
+        }
+        if (key < id) {
+          acc[key] = value;
+        }
+        return acc;
+      }, {});
+
+    setItemsMap({ backlog, ...newEntries });
+  };
+
   return (
     <>
       <div>
@@ -73,7 +94,14 @@ const Scrum = () => {
           {Object.keys(itemsMap)
             .filter(key => key !== "backlog")
             .map(key => (
-              <SprintLine sprintPoints={sprintPoints} internalScroll key={key} id={key} cards={itemsMap[key]} />
+              <SprintLine
+                sprintPoints={sprintPoints}
+                internalScroll
+                key={key}
+                id={key}
+                cards={itemsMap[key]}
+                deleteSprint={deleteSprint}
+              />
             ))}
           {Object.keys(itemsMap).length < 6 && (
             <FlexBox>
