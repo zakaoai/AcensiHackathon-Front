@@ -20,7 +20,7 @@ const PostIt = styled.div`
 `;
 
 const Content = styled.div`
-  padding: 2rem;
+  padding: 2rem 0 2rem 0;
   width: 100%;
   margin: 0 auto;
 `;
@@ -33,7 +33,7 @@ const Footer = styled.div`
 const Card = ({ id, libelle, cout, lifePoint, index }) => {
   const isDragDisabled = lifePoint === 0;
   return (
-    <Draggable key={id} draggableId={id} index={index} isDragDisabled={isDragDisabled}>
+    <Draggable key={id} draggableId={`${id}`} index={index} isDragDisabled={isDragDisabled}>
       {(provided, snapshot) => (
         <PostIt
           ref={provided.innerRef}

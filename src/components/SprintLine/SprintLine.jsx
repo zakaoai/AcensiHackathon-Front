@@ -42,10 +42,11 @@ const SprintLine = ({ sprintPoints, id, cards, deleteSprint }) => {
         <h1>
           Sprint {id} ({cardPoints} /{sprintPoints}pts)
         </h1>
-
-        <IconButton aria-label="delete" onClick={deleteSprint(id)}>
-          <DeleteIcon sx={{ fontSize: 40, color: red[500] }} />
-        </IconButton>
+        {deleteSprint && (
+          <IconButton aria-label="delete" onClick={deleteSprint(id)}>
+            <DeleteIcon sx={{ fontSize: 40, color: red[500] }} />
+          </IconButton>
+        )}
 
         <SprintArrow />
       </FlexBox>
