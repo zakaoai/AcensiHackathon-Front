@@ -17,10 +17,12 @@ const PostIt = styled.div`
   -ms-transform: rotate(2deg);
   border-bottom-right-radius: 60px 10px;
   margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const Content = styled.div`
-  padding: 2rem 0 2rem 0;
   width: 100%;
   margin: 0 auto;
 `;

@@ -2,7 +2,7 @@ import React from "react";
 
 const Rules = () => {
   return (
-    <>
+    <div>
       <h2>Règles du jeu :</h2>
       <p>
         Objectif : L’équipe doit réaliser une amélioration sur un produit. Pour y parvenir, chaque étape du processus de
@@ -20,7 +20,7 @@ const Rules = () => {
         souhaitez. Vous pouvez également ajouter des sprint. Attention toutefois à ne pas rajouter de sprint inutile.
       </p>
       Bon jeu !
-    </>
+    </div>
   );
 };
 

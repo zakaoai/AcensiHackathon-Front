@@ -20,9 +20,10 @@ const CardContainer = ({ id, cards, currentCardPoints, maxSprintPoints }) => {
   return (
     <Droppable droppableId={id} direction="horizontal">
       {(provided, snapshot) => {
-        const card = cardsList.find(card => card.id === snapshot.draggingOverWith);
+        const card = cardsList.find(card => card.id == snapshot.draggingOverWith);
 
-        const isOverMaxSprintPoints = currentCardPoints + card?.cout > maxSprintPoints;
+        const isOverMaxSprintPoints =
+          snapshot.draggingFromThisWith === undefined && currentCardPoints + card?.cout > maxSprintPoints;
 
         return (
           <PostItList

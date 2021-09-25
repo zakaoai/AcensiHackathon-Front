@@ -1,28 +1,31 @@
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import React from "react";
 
 import { DragDropContext } from "react-beautiful-dnd";
 import styled from "styled-components";
 import Rules from "./Rules";
-import { addSprint, deleteSprint, onDragEnd } from "./utils";
+import { onDragEnd } from "./utils";
 import Backlog from "/components/Backlog/Backlog";
 
 import SprintLine from "/components/SprintLine/SprintLine";
 import CardContext from "/contexts/CardContext";
-import useScrumTuto from "/hooks/useScrumTuto";
+import useScrumJeux from "/hooks/useScrumJeux";
 
 const SprintWrapper = styled.div`
   padding-bottom: 265px;
 `;
 
 const Tuto = () => {
-  const { itemsMap, setItemsMap, sprintPoints, postitList } = useScrumTuto();
+  const { itemsMap, setItemsMap, sprintPoints, postitList } = useScrumJeux(1);
 
   return (
     <>
       <div>Tutoriel : Creer un projet web</div>
       <Rules />
+      <Grid container justifyContent="flex-end" alignItems="right">
+        <Button variant="contained">Envoyer la solution</Button>
+      </Grid>
       <CardContext.Provider value={postitList}>
         <DragDropContext onDragEnd={onDragEnd(itemsMap, setItemsMap, sprintPoints)}>
           <SprintWrapper>
