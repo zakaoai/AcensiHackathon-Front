@@ -1,6 +1,6 @@
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import Button from "@mui/material/Button";
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 
 import { DragDropContext } from "react-beautiful-dnd";
 import styled from "styled-components";
@@ -32,9 +32,18 @@ const FlexCenter = styled.div`
   margin-right: auto;
 `;
 
+const CardContext = createContext([]);
+
 const Scrum = () => {
   const sprintPoints = 60;
-  const postitList = [{ id: "1", libelle: "Post it 1", cout: 10, ordre: 1 }];
+  const postitList = [
+    { id: "1", libelle: "Post it 1", cout: 10, ordre: 1 },
+    { id: "2", libelle: "Post it 2", cout: 10, ordre: 2 },
+    { id: "3", libelle: "Post it 3", cout: 20, ordre: 3 },
+    { id: "4", libelle: "Post it 4", cout: 40, ordre: 4 },
+    { id: "5", libelle: "Post it 5", cout: 30, ordre: 5 },
+    { id: "6", libelle: "Post it 6", cout: 10, ordre: 6 }
+  ];
 
   const [itemsMap, setItemsMap] = useState({ 1: [], backlog: postitList });
 
@@ -50,12 +59,15 @@ const Scrum = () => {
       const next = [...itemsMap[destination.droppableId]];
       const target = current[source.index];
 
-      // remove from original
-      current.splice(source.index, 1);
-      // insert into next
-      next.splice(destination.index, 0, target);
+      const cardPoints = next.reduce((acc, card) => acc + card.cout, 0);
+      if (cardPoints + target.cout <= sprintPoints) {
+        // remove from original
+        current.splice(source.index, 1);
+        // insert into next
+        next.splice(destination.index, 0, target);
 
-      setItemsMap({ ...itemsMap, [source.droppableId]: current, [destination.droppableId]: next });
+        setItemsMap({ ...itemsMap, [source.droppableId]: current, [destination.droppableId]: next });
+      }
     }
   };
 
@@ -89,38 +101,41 @@ const Scrum = () => {
         <h1>Scrum</h1>
         Jeu 1 : Creer un projet web
       </div>
-      <DragDropContext onDragEnd={onDragEnd}>
-        <SprintWrapper>
-          {Object.keys(itemsMap)
-            .filter(key => key !== "backlog")
-            .map(key => (
-              <SprintLine
-                sprintPoints={sprintPoints}
-                internalScroll
-                key={key}
-                id={key}
-                cards={itemsMap[key]}
-                deleteSprint={deleteSprint}
-              />
-            ))}
-          {Object.keys(itemsMap).length < 6 && (
-            <FlexBox>
-              <FlexCenter>
-                <Button
-                  variant="contained"
-                  onClick={addSprint}
-                  endIcon={<AddCircleOutlineIcon style={{ fontSize: 60 }} />}>
-                  Ajouter un sprint
-                </Button>
-              </FlexCenter>
-            </FlexBox>
-          )}
-        </SprintWrapper>
+      <CardContext.Provider value={postitList}>
+        <DragDropContext onDragEnd={onDragEnd}>
+          <SprintWrapper>
+            {Object.keys(itemsMap)
+              .filter(key => key !== "backlog")
+              .map(key => (
+                <SprintLine
+                  sprintPoints={sprintPoints}
+                  internalScroll
+                  key={key}
+                  id={key}
+                  cards={itemsMap[key]}
+                  deleteSprint={deleteSprint}
+                />
+              ))}
+            {Object.keys(itemsMap).length < 6 && (
+              <FlexBox>
+                <FlexCenter>
+                  <Button
+                    variant="contained"
+                    onClick={addSprint}
+                    endIcon={<AddCircleOutlineIcon style={{ fontSize: 60 }} />}>
+                    Ajouter un sprint
+                  </Button>
+                </FlexCenter>
+              </FlexBox>
+            )}
+          </SprintWrapper>
 
-        <Backlog id="backlog" cards={itemsMap.backlog} />
-      </DragDropContext>
+          <Backlog id="backlog" cards={itemsMap.backlog} />
+        </DragDropContext>
+      </CardContext.Provider>
     </>
   );
 };
 
 export default Scrum;
+export { CardContext };

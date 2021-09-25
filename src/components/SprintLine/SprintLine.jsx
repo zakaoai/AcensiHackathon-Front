@@ -50,7 +50,7 @@ const SprintLine = ({ sprintPoints, id, cards, deleteSprint }) => {
         <SprintArrow />
       </FlexBox>
 
-      <CardContainer id={id} cards={cards} />
+      <CardContainer id={id} cards={cards} currentCardPoints={cardPoints} maxSprintPoints={sprintPoints} />
     </>
   );
 };
