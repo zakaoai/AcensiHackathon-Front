@@ -7,7 +7,6 @@ const useScrumScore = () => {
 
   useEffect(() => {
     const { gameScores } = userState;
-    console.log("gameScores", gameScores);
     if (gameScores) {
       setUserPoints(gameScores.reduce((acc, curr) => acc + curr, 0));
     }
