@@ -39,7 +39,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "Cold Library App",
+      title: "Hackathon Acensi Crazy Zebras",
       template: paths.src + "/index.html", // template file
       filename: "index.html" // output file
     })
