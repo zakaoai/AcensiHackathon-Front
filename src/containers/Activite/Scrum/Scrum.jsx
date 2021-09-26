@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import ScrumUserContext from "/contexts/ScrumUserContext";
 
 import ScrumRoutes from "/routes/ScrumRoutes";
 
 const Scrum = () => {
+  const [userState, setUserState] = useState({ gameScores: [] });
+
   return (
     <>
       <div>
         <h1>Scrum</h1>
       </div>
-      <ScrumRoutes />
+      <ScrumUserContext.Provider value={{ userState, setUserState }}>
+        <ScrumRoutes />
+      </ScrumUserContext.Provider>
     </>
   );
 };

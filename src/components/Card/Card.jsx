@@ -44,15 +44,15 @@ const Card = ({ id, libelle, cout, lifePoint, index }) => {
   return (
     <Draggable key={id} draggableId={`${id}`} index={index} isDragDisabled={isDragDisabled}>
       {(provided, snapshot) => (
-        <PostItCard
-          libelle={libelle}
-          cout={cout}
+        <PostIt
           ref={provided.innerRef}
           isDragging={snapshot.isDragging}
           isDragDisabled={isDragDisabled}
           {...provided.draggableProps}
-          {...provided.dragHandleProps}
-        />
+          {...provided.dragHandleProps}>
+          <Content>{libelle}</Content>
+          <Footer>{cout} Pts</Footer>
+        </PostIt>
       )}
     </Draggable>
   );

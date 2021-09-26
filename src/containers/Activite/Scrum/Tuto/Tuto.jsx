@@ -11,6 +11,7 @@ import Backlog from "/components/Backlog/Backlog";
 import SprintLine from "/components/SprintLine/SprintLine";
 import CardContext from "/contexts/CardContext";
 import useScrumJeux from "/hooks/useScrumJeux";
+import { Link } from "react-router-dom";
 
 const SprintWrapper = styled.div`
   padding-bottom: 265px;
@@ -24,7 +25,9 @@ const Tuto = () => {
       <div>Tutoriel : Creer un projet web</div>
       <Rules />
       <Grid container justifyContent="flex-end" alignItems="right">
-        <Button variant="contained">Envoyer la solution</Button>
+        <Button variant="contained" component={Link} to={"/app/scrum/solution/1"}>
+          Voir la solution
+        </Button>
       </Grid>
       <CardContext.Provider value={postitList}>
         <DragDropContext onDragEnd={onDragEnd(itemsMap, setItemsMap, sprintPoints)}>

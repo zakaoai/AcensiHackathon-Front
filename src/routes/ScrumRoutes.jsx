@@ -8,6 +8,7 @@ import Jeux from "../containers/Activite/Scrum/Jeux/Jeux";
 import Tuto from "/containers/Activite/Scrum/Tuto/Tuto";
 import Intro from "/containers/Activite/Scrum/Intro/Intro";
 import Solution from "/containers/Activite/Scrum/Solution/Solution";
+import Resultat from "/containers/Activite/Scrum/Resultat/Resultat";
 const ScrumRoutes = () => {
   return (
     <Switch>
@@ -22,6 +23,9 @@ const ScrumRoutes = () => {
       </Route>
       <Route path={SiteMap.SCRUM.SOLUTION.path}>
         <Solution />
+      </Route>
+      <Route path={SiteMap.SCRUM.RESULTATS.path}>
+        <Resultat />
       </Route>
       <Route path={`*`}>
         <Redirect to={"/app/scrum/intro/1"} />

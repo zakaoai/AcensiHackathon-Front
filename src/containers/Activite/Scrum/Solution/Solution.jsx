@@ -8,13 +8,19 @@ import { useParams } from "react-router";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
+import ScrumScore from "../ScrumScore/ScrumScore";
+import SiteMap from "/routes/SiteMap";
 
 const Solution = () => {
-  const { gameId } = useParams();
+  let { gameId } = useParams();
+  gameId = gameId ? parseInt(gameId) : 1;
   const { itemsMap, sprintPoints } = useScrumSolution(gameId);
 
   return (
     <>
+      <Grid container justifyContent="flex-end" alignItems="right">
+        <ScrumScore />
+      </Grid>
       <div>Solution Tutoriel : Creer un projet web</div>
       {Object.keys(itemsMap).map(key => {
         const cards = itemsMap[key];
@@ -33,9 +39,16 @@ const Solution = () => {
       })}
       <SolutionMessage id={gameId} />
       <Grid container justifyContent="flex-end" alignItems="right">
-        <Button variant="contained" component={Link} to={`/app/scrum/jeux/${parseInt(gameId) + 1}`}>
-          Jeux suivant
-        </Button>
+        {gameId < 4 && (
+          <Button variant="contained" component={Link} to={`/app/scrum/jeux/${parseInt(gameId) + 1}`}>
+            Jeux suivant
+          </Button>
+        )}
+        {gameId === 4 && (
+          <Button variant="contained" component={Link} to={SiteMap.SCRUM.RESULTATS.path}>
+            Voir les résultats
+          </Button>
+        )}
       </Grid>
     </>
   );
