@@ -60,6 +60,11 @@ const Credit = () => (
           <li>
             <a href="https://fr.wikipedia.org/wiki/M%C3%A9thode_agile">Méthode Agile</a>
           </li>
+          <li>
+            <a href="https://www.cegos.fr/fiches-metiers/les-metiers-de-la-gestion-de-projets/fiche-metier-product-owner">
+              Fiche metier product owner
+            </a>
+          </li>
         </ul>
       </article>
     </main>
