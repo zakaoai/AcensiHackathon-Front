@@ -8,13 +8,15 @@ import accueil_recap from "~/assets/images/accueil_recap.png";
 function HomeActivity() {
   return (
     <>
-      <div className='w-full flex flex-col items-center font-bold text-2xl my-3'>
-        <h1 className=''>Vis ma vie en ESN !</h1>
+      <div className="w-full flex flex-col items-center font-bold text-2xl my-3">
+        <h1 className="">Vis ma vie en ESN !</h1>
       </div>
-      <p className='px-2 mb-5 md:text-center'>Apprenez en vous amusant les métiers d’une ESN avec nos jeux sérieux ! </p>
+      <p className="px-2 mb-5 md:text-center">
+        Apprenez en vous amusant les métiers d’une ESN avec nos jeux sérieux !{" "}
+      </p>
       <Grid item>
         <Grid container justifyContent="center">
-          <img style={{ maxWidth: "100%" }} src={accueil_recap} alt="logo" />
+          <img style={{ maxWidth: "50%" }} src={accueil_recap} alt="logo" />
         </Grid>
       </Grid>
     </>

@@ -5,12 +5,12 @@ import scrum_slide2 from "~/assets/images/scrum/scrum_slide2.png";
 const Slide2 = () => (
   <>
     <Grid container justifyContent="center">
-      <img style={{ maxWidth: "70%" }} src={scrum_slide2} alt="logo" />
+      <img style={{ maxWidth: "40%" }} src={scrum_slide2} alt="logo" />
     </Grid>
     <Grid container justifyContent="center">
       <p> Processus de fabrication Agile et chronologie des cérémonies </p>
     </Grid>
-    <div id="pres_scrum_slide2" className='w-3/4 mx-auto'>
+    <div id="pres_scrum_slide2" className="w-3/4 mx-auto">
       <p>
         Dans un projet en Scrum, le <span className="font-bold">backlog</span> est le cœur central de tout produit
         développé en Scrum. Il permet de collecter les attentes clients (<span className="font-bold">user stories</span>
