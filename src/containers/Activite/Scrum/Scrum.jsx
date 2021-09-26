@@ -8,9 +8,6 @@ const Scrum = () => {
 
   return (
     <>
-      <div>
-        <h1>Scrum</h1>
-      </div>
       <ScrumUserContext.Provider value={{ userState, setUserState }}>
         <ScrumRoutes />
       </ScrumUserContext.Provider>

@@ -8,7 +8,7 @@ const Slide1 = () => (
       <img style={{ maxWidth: "70%" }} src={scrum_slide1} alt="logo" />
     </Grid>
     <Grid container justifyContent="center">
-      <p> L'accueil d'un Srum Master dans une équipe </p>
+      <p> L'accueil d'un Scrum Master dans une équipe </p>
     </Grid>
 
     <div id="pres_scrum_slide1">
