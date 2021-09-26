@@ -11,6 +11,18 @@ const SiteMap = {
     JEUX: { path: "/app/scrum/jeux/:gameId", label: "Jeux scrum" },
     SOLUTION: { path: "/app/scrum/solution/:gameId", label: "Solution jeux scrum" },
     RESULTATS: { path: "/app/scrum/resultats", label: "Résultats jeux scrum" }
+  },
+  PO: {
+    path: "/app/po",
+    label: "Product Owner"
+  },
+  INGE_AFFAIRE: {
+    path: "/app/inge-affaire",
+    label: "Ingénieur d'affaire"
+  },
+  CREDIT: {
+    path: "/app/credit",
+    label: "Crédit"
   }
 };
 

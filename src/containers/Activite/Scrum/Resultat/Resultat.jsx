@@ -9,7 +9,7 @@ const Resultat = () => {
 
   return (
     <>
-      <p>Merci d'avoir jouer !</p>
+      <p>Merci d'avoir joué !</p>
       <p>Votre score final est de {userPoints} points !</p>
       <Button variant="contained" component={Link} to={SiteMap.ACCUEIL.path}>
         Retourner à l'accueil

@@ -2,17 +2,19 @@ import React from "react";
 
 const Message1 = () => (
   <>
-    <p>Solution :</p>
-    <p>
-      4 tâches mais toutes rentraient dans un seul sprint ! Il fallait toutefois veiller à respecter l’ordre des tâches
-      :
+    <div id="solution_tutoriel_scrum">
+      <h3>Solution Tutoriel</h3>
+      <p>
+        4 tâches mais toutes rentraient dans un seul sprint ! Il fallait toutefois veiller à respecter l’ordre des
+        tâches :
+      </p>
       <ol>
-        <li>conception et analyse </li>
-        <li>développement</li>
-        <li>tests </li>
-        <li>déploiement et mise en production</li>
+        <li>Conception et analyse</li>
+        <li>Développement</li>
+        <li>Tests</li>
+        <li>Déploiement et mise en production</li>
       </ol>
-    </p>
+    </div>
   </>
 );
 

@@ -21,7 +21,7 @@ const Solution = () => {
       <Grid container justifyContent="flex-end" alignItems="right">
         <ScrumScore />
       </Grid>
-      <div>Solution Tutoriel : Creer un projet web</div>
+      <SolutionMessage id={gameId} />
       {Object.keys(itemsMap).map(key => {
         const cards = itemsMap[key];
         const cardPoints = cards.reduce((acc, card) => acc + card.cout, 0);
@@ -37,7 +37,7 @@ const Solution = () => {
           </div>
         );
       })}
-      <SolutionMessage id={gameId} />
+
       <Grid container justifyContent="flex-end" alignItems="right">
         {gameId < 4 && (
           <Button variant="contained" component={Link} to={`/app/scrum/jeux/${parseInt(gameId) + 1}`}>

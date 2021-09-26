@@ -22,7 +22,6 @@ const Tuto = () => {
 
   return (
     <>
-      <div>Tutoriel : Creer un projet web</div>
       <Rules />
       <Grid container justifyContent="flex-end" alignItems="right">
         <Button variant="contained" component={Link} to={"/app/scrum/solution/1"}>

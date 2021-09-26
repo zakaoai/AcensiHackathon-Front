@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import Slide1 from "./Slide1";
 import SiteMap from "~/routes/SiteMap";
+import Slide2 from "./Slide2";
+import Slide3 from "./Slide3";
 
 const Intro = () => {
   let { slideId } = useParams();
@@ -13,8 +15,8 @@ const Intro = () => {
     <>
       <div>
         {slideId === 1 && <Slide1 />}
-        {slideId === 2 && <Slide1 />}
-        {slideId === 3 && <Slide1 />}
+        {slideId === 2 && <Slide2 />}
+        {slideId === 3 && <Slide3 />}
       </div>
       {slideId < 3 && (
         <Grid container justifyContent="flex-end" alignItems="right">

@@ -7,7 +7,7 @@ import MenuDesktop from "./MenuDesktop";
  * Menu de l'application
  */
 function Menu() {
-  const links = [SiteMap.ACCUEIL, SiteMap.SCRUM];
+  const links = [SiteMap.ACCUEIL, SiteMap.SCRUM, SiteMap.PO, SiteMap.INGE_AFFAIRE, SiteMap.CREDIT];
 
   return (
     <>

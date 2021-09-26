@@ -13,6 +13,7 @@ import SprintLine from "~/components/SprintLine/SprintLine";
 import CardContext from "~/contexts/CardContext";
 import useScrumJeux from "~/hooks/useScrumJeux";
 import ScrumScore from "../ScrumScore/ScrumScore";
+import IntroJeux from "./Intro/IntroJeux";
 
 const SprintWrapper = styled.div`
   padding-bottom: 265px;
@@ -36,7 +37,7 @@ const Jeux = () => {
 
   return (
     <>
-      <div>Jeu {gameId} :</div>
+      <IntroJeux id={gameId} />
       <Grid container justifyContent="flex-end" alignItems="right">
         <ScrumScore />
       </Grid>

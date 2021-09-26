@@ -1,6 +1,6 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
-import hackathonAcensi from "~/assets/images/Hackathon-Acensi.png";
+import accueil_recap from "~/assets/images/accueil_recap.png";
 
 /**
  * Activité d'accueil du projet
@@ -8,10 +8,11 @@ import hackathonAcensi from "~/assets/images/Hackathon-Acensi.png";
 function HomeActivity() {
   return (
     <>
-      Bienvenue dans cette application du Hackathon Solidaire
+      <h1>Vis ma vie en ESN</h1>
+      <h2>Apprenez en vous amusant les métiers d’une ESN avec nos jeux sérieux ! </h2>
       <Grid item>
         <Grid container justifyContent="center">
-          <img style={{ maxWidth: "50%" }} src={hackathonAcensi} alt="logo" />
+          <img style={{ maxWidth: "100%" }} src={accueil_recap} alt="logo" />
         </Grid>
       </Grid>
     </>
