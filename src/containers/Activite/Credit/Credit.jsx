@@ -37,10 +37,13 @@ const Credit = () => (
           <span className="font-bold">Back-end technologie</span> :<br />
           Lumen (by Laravel)
         </p>
+
+        <i className="fab fa-regular fa-image mt-8 mb-4 text-4xl"></i>
         <p>
-          Textes : Amélie Bacle
+          <span className="font-bold">Contenus.</span> :<br />
+          <span> Textes : Amélie Bacle </span>
           <br />
-          Illustrations : Amélie Bacle
+          <span> Illustrations : Amélie Bacle </span>
         </p>
 
         <i className="far fa-copy mt-8 mb-4 text-4xl"></i>
