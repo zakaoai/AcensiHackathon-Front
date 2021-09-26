@@ -8,8 +8,11 @@ const MenuDesktop = ({ links }) => {
 
   return (
     <Hidden smDown>
-      <AppBar position="static" style={{ margin: 10 }}>
-        <Tabs aria-label="simple tabs example" value={tabsValue}>
+      <AppBar position="static" style={{ marginBottom: 10 }} className='w-full bg-blue-800'>
+        <nav className="w-full h-12 bg-blue-800 text-white flex justify-center items-center py-2">
+          <h1>Be ESN</h1>
+        </nav>
+        <Tabs aria-label="simple tabs example" value={tabsValue} className='bg-blue-800 w-full'>
           {links.map(link => (
             <Tab key={link.path} label={link.label} component={NavLink} to={link.path} value={link.path} />
           ))}

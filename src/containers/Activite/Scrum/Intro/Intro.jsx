@@ -19,15 +19,15 @@ const Intro = () => {
         {slideId === 3 && <Slide3 />}
       </div>
       {slideId < 3 && (
-        <Grid container justifyContent="flex-end" alignItems="right">
-          <Button variant="contained" component={Link} to={`/app/scrum/intro/${slideId + 1}`}>
+        <Grid container justifyContent="flex-end" alignItems="right" width='75%' margin='0 auto' className='w-3/4 mx-auto' style={{margin: '0 auto !important', width: '75% !important'}}>
+          <Button variant="contained" component={Link} to={`/app/scrum/intro/${slideId + 1}`} className='mb-2'>
             suivant
           </Button>
         </Grid>
       )}
       {slideId === 3 && (
-        <Grid container justifyContent="flex-end" alignItems="right">
-          <Button variant="contained" component={Link} to={SiteMap.SCRUM.TUTO.path}>
+        <Grid container justifyContent="flex-end" alignItems="right" className='w-3/4 mx-auto' width='75%' margin='0 auto' style={{margin: '0 auto !important', width: '75% !important'}}>
+          <Button variant="contained" component={Link} to={SiteMap.SCRUM.TUTO.path} className='mb-2'>
             Accéder au tutoriel
           </Button>
         </Grid>

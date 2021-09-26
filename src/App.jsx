@@ -5,7 +5,7 @@ import Routing from "~/routes/Routing";
 import { object } from "prop-types";
 
 const App = () => (
-  <Container>
+  <Container style={{"maxWidth": '100%', paddingLeft: 0, paddingRight: 0}}>
     <BrowserRouter>
       <Routing />
     </BrowserRouter>

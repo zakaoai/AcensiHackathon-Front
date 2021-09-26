@@ -10,7 +10,7 @@ const Slide2 = () => (
     <Grid container justifyContent="center">
       <p> Processus de fabrication Agile et chronologie des cérémonies </p>
     </Grid>
-    <div id="pres_scrum_slide2">
+    <div id="pres_scrum_slide2" className='w-3/4 mx-auto'>
       <p>
         Dans un projet en Scrum, le <span className="font-bold">backlog</span> est le cœur central de tout produit
         développé en Scrum. Il permet de collecter les attentes clients (<span className="font-bold">user stories</span>

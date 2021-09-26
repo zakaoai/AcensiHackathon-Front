@@ -5,6 +5,7 @@ import jeux from "~/assets/images/IngeAffaire/jeux.png";
 
 const IngeAffaire = () => (
   <>
+    <div className='w-3/4 mx-auto'>
     <div id="page_inge_affaire">
       <h3>Bientôt disponible des jeux sérieux pour découvrir le métier d’ingénieur d’affaires dans une ESN.</h3>
     </div>
@@ -30,6 +31,7 @@ const IngeAffaire = () => (
       Nous vous proposons d’apprendre à trouver le bon profil de compétences pour le bon métier que le client demande.
       Ferez-vous le bon choix ?
     </p>
+    </div>
   </>
 );
 

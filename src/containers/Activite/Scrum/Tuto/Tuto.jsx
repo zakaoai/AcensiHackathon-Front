@@ -23,7 +23,7 @@ const Tuto = () => {
   return (
     <>
       <Rules />
-      <Grid container justifyContent="flex-end" alignItems="right">
+      <Grid container justifyContent="flex-end" alignItems="right" style={{"maxWidth": '100%', paddingLeft: 0, paddingRight: 0}}>
         <Button variant="contained" component={Link} to={"/app/scrum/solution/1"}>
           Voir la solution
         </Button>

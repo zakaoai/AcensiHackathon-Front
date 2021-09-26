@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 
 const PO = () => (
   <>
-    <div id="page_product_owner">
+    <div id="page_product_owner" className='w-3/4 mx-auto'>
       <h3>Bientôt disponible des jeux sérieux pour découvrir le métier de Product Owner.</h3>
       <Grid container direction="row" justifyContent="center" alignItems="center">
         <img style={{ maxWidth: "50%" }} src={product_owner} alt="logo" />

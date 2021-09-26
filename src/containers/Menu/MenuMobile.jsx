@@ -89,7 +89,7 @@ const MenuMobile = ({ links }) => {
 
   return (
     <Hidden mdUp>
-      <AppBar position="static" style={{ margin: 10 }}>
+      <AppBar position="static" style={{ marginBottom: 10 }}>
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => setOpen(true)}>
             <MenuIcon />
@@ -99,6 +99,7 @@ const MenuMobile = ({ links }) => {
             .map(link => (
               <Tab key={link.path} label={link.label} component={NavLink} to={link.path} value={link.path} />
             ))}
+          <h1 className='ml-auto'>Be ESN</h1>
         </Toolbar>
       </AppBar>
       <Drawer

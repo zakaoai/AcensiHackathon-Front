@@ -10,7 +10,7 @@ const Slide3 = () => (
     <Grid container justifyContent="center">
       <p> Aide visuelle de gestion de projet avec un tableau blanc et des post-it </p>
     </Grid>
-    <div id="pres_scrum_slide3">
+    <div id="pres_scrum_slide3" className='w-3/4 mx-auto'>
       <p>
         Chaque tâche du <span className="font-bold">backlog</span> peut être notée sur un
         <span className="font-bold">post it</span>, de façon très synthétique et visible de loin. Lors du{" "}

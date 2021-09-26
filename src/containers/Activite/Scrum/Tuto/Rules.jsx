@@ -2,7 +2,7 @@ import React from "react";
 
 const Rules = () => {
   return (
-    <div id="pres_tutoriel_scrum">
+    <div id="pres_tutoriel_scrum" className='w-3/4 mx-auto mt-5'>
       <h3>Objectif du Tutoriel:</h3>
       <p>
         L’équipe doit réaliser une amélioration sur un produit. Pour y parvenir, chaque étape du processus de

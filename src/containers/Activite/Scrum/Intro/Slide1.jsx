@@ -11,7 +11,7 @@ const Slide1 = () => (
       <p> L'accueil d'un Scrum Master dans une équipe </p>
     </Grid>
 
-    <div id="pres_scrum_slide1">
+    <div id="pres_scrum_slide1" className='w-3/4 mx-auto'>
       <p>
         Le <span className="font-bold">Scrum Master</span> est une personne intégrée dans l’équipe chargée de mettre en
         place la méthode <span className="font-bold">Scrum</span>. Cette méthode est une des méthodes de gestion de

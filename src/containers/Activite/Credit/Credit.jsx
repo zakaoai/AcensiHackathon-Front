@@ -2,11 +2,11 @@ import React from "react";
 
 const Credit = () => (
   <>
-    <header>
+    {/*<header>
       <nav className="w-full h-12 bg-blue-800 text-white flex justify-center items-center">
         <h1>Be ESN : Crédits</h1>
       </nav>
-    </header>
+    </header>*/}
     <main className="flex flex-col items-center">
       <article className="w-3/4 shadow-2xl p-5 my-4 border border-gray-200 flex flex-col items-center text-center">
         <p className="w-1/2">
@@ -40,7 +40,7 @@ const Credit = () => (
 
         <i className="fab fa-regular fa-image mt-8 mb-4 text-4xl"></i>
         <p>
-          <span className="font-bold">Contenus.</span> :<br />
+          <span className="font-bold">Contenus</span> :<br />
           <span> Textes : Amélie Bacle </span>
           <br />
           <span> Illustrations : Amélie Bacle </span>
