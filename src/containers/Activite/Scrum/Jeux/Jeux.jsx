@@ -33,49 +33,51 @@ const FlexCenter = styled.div`
 
 const Jeux = () => {
   const { gameId } = useParams();
-  const { itemsMap, setItemsMap, sprintPoints, postitList, envoyerScore } = useScrumJeux(gameId);
+  const { itemsMap, setItemsMap, sprintPoints, postitList, envoyerScore } = useScrumJeux(gameId, true);
 
   return (
     <>
-      <IntroJeux id={gameId} />
-      <Grid container justifyContent="flex-end" alignItems="right">
-        <ScrumScore />
-      </Grid>
-      <Grid container justifyContent="flex-end" alignItems="right" onClick={envoyerScore}>
-        <Button variant="contained">Envoyer la solution</Button>
-      </Grid>
-      <CardContext.Provider value={postitList}>
-        <DragDropContext onDragEnd={onDragEnd(itemsMap, setItemsMap, sprintPoints)}>
-          <SprintWrapper>
-            {Object.keys(itemsMap)
-              .filter(key => key !== "backlog")
-              .map(key => (
-                <SprintLine
-                  sprintPoints={sprintPoints}
-                  internalScroll
-                  key={key}
-                  id={key}
-                  cards={itemsMap[key]}
-                  deleteSprint={deleteSprint(itemsMap, setItemsMap)}
-                />
-              ))}
-            {Object.keys(itemsMap).length < 6 && (
-              <FlexBox>
-                <FlexCenter>
-                  <Button
-                    variant="contained"
-                    onClick={addSprint(itemsMap, setItemsMap)}
-                    endIcon={<AddCircleOutlineIcon style={{ fontSize: 60 }} />}>
-                    Ajouter un sprint
-                  </Button>
-                </FlexCenter>
-              </FlexBox>
-            )}
-          </SprintWrapper>
+      <div className="w-3/4 mx-auto">
+        <IntroJeux id={gameId} />
+        <Grid container justifyContent="flex-end" alignItems="right">
+          <ScrumScore />
+        </Grid>
+        <Grid container justifyContent="flex-end" alignItems="right" onClick={envoyerScore}>
+          <Button variant="contained">Envoyer la solution</Button>
+        </Grid>
+        <CardContext.Provider value={postitList}>
+          <DragDropContext onDragEnd={onDragEnd(itemsMap, setItemsMap, sprintPoints)}>
+            <SprintWrapper>
+              {Object.keys(itemsMap)
+                .filter(key => key !== "backlog")
+                .map(key => (
+                  <SprintLine
+                    sprintPoints={sprintPoints}
+                    internalScroll
+                    key={key}
+                    id={key}
+                    cards={itemsMap[key]}
+                    deleteSprint={deleteSprint(itemsMap, setItemsMap)}
+                  />
+                ))}
+              {Object.keys(itemsMap).length < 6 && (
+                <FlexBox>
+                  <FlexCenter>
+                    <Button
+                      variant="contained"
+                      onClick={addSprint(itemsMap, setItemsMap)}
+                      endIcon={<AddCircleOutlineIcon style={{ fontSize: 60 }} />}>
+                      Ajouter un sprint
+                    </Button>
+                  </FlexCenter>
+                </FlexBox>
+              )}
+            </SprintWrapper>
 
-          <Backlog id="backlog" cards={itemsMap.backlog} />
-        </DragDropContext>
-      </CardContext.Provider>
+            <Backlog id="backlog" cards={itemsMap.backlog} />
+          </DragDropContext>
+        </CardContext.Provider>
+      </div>
     </>
   );
 };

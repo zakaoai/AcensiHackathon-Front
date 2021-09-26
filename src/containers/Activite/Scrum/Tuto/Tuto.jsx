@@ -22,25 +22,31 @@ const Tuto = () => {
 
   return (
     <>
-      <Rules />
-      <Grid container justifyContent="flex-end" alignItems="right" style={{"maxWidth": '100%', paddingLeft: 0, paddingRight: 0}}>
-        <Button variant="contained" component={Link} to={"/app/scrum/solution/1"}>
-          Voir la solution
-        </Button>
-      </Grid>
-      <CardContext.Provider value={postitList}>
-        <DragDropContext onDragEnd={onDragEnd(itemsMap, setItemsMap, sprintPoints)}>
-          <SprintWrapper>
-            {Object.keys(itemsMap)
-              .filter(key => key !== "backlog")
-              .map(key => (
-                <SprintLine sprintPoints={sprintPoints} internalScroll key={key} id={key} cards={itemsMap[key]} />
-              ))}
-          </SprintWrapper>
+      <div className="w-3/4 mx-auto">
+        <Rules />
+        <Grid
+          container
+          justifyContent="flex-end"
+          alignItems="right"
+          style={{ maxWidth: "100%", paddingLeft: 0, paddingRight: 0 }}>
+          <Button variant="contained" component={Link} to={"/app/scrum/solution/1"}>
+            Voir la solution
+          </Button>
+        </Grid>
+        <CardContext.Provider value={postitList}>
+          <DragDropContext onDragEnd={onDragEnd(itemsMap, setItemsMap, sprintPoints)}>
+            <SprintWrapper>
+              {Object.keys(itemsMap)
+                .filter(key => key !== "backlog")
+                .map(key => (
+                  <SprintLine sprintPoints={sprintPoints} internalScroll key={key} id={key} cards={itemsMap[key]} />
+                ))}
+            </SprintWrapper>
 
-          <Backlog id="backlog" cards={itemsMap.backlog} />
-        </DragDropContext>
-      </CardContext.Provider>
+            <Backlog id="backlog" cards={itemsMap.backlog} />
+          </DragDropContext>
+        </CardContext.Provider>
+      </div>
     </>
   );
 };
