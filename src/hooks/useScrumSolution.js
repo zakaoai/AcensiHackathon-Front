@@ -1,4 +1,4 @@
-import GameService from "/services/GameService";
+import GameService from "~/services/GameService";
 
 const { useState, useEffect } = require("react");
 

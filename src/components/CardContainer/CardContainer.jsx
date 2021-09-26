@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Droppable } from "react-beautiful-dnd";
 import styled from "styled-components";
 import Card from "../Card/Card";
-import CardContext from "/contexts/CardContext";
+import CardContext from "~/contexts/CardContext";
 
 const PostItList = styled.div`
   background-color: ${props =>

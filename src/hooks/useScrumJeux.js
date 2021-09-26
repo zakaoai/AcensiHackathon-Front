@@ -1,6 +1,6 @@
 import { useHistory } from "react-router";
-import ScrumUserContext from "/contexts/ScrumUserContext";
-import GameService from "/services/GameService";
+import ScrumUserContext from "~/contexts/ScrumUserContext";
+import GameService from "~/services/GameService";
 
 const { useState, useEffect, useContext } = require("react");
 
@@ -8,7 +8,7 @@ const useScrumJeux = (id, enableLifePoint = false) => {
   const sprintPoints = 60;
   const [cards, setCards] = useState([]);
   const [itemsMap, setItemsMap] = useState({ backlog: [] });
-  const { userState, setUserState } = useContext(ScrumUserContext);
+  const { setUserState } = useContext(ScrumUserContext);
   const history = useHistory();
 
   useEffect(() => {

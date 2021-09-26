@@ -4,11 +4,11 @@ import { Route, Switch, Redirect } from "react-router-dom";
 /* Liste des Path à utiliser */
 
 import SiteMap from "./SiteMap";
-import Jeux from "../containers/Activite/Scrum/Jeux/Jeux";
-import Tuto from "/containers/Activite/Scrum/Tuto/Tuto";
-import Intro from "/containers/Activite/Scrum/Intro/Intro";
-import Solution from "/containers/Activite/Scrum/Solution/Solution";
-import Resultat from "/containers/Activite/Scrum/Resultat/Resultat";
+import Jeux from "~/containers/Activite/Scrum/Jeux/Jeux";
+import Tuto from "~/containers/Activite/Scrum/Tuto/Tuto";
+import Intro from "~/containers/Activite/Scrum/Intro/Intro";
+import Solution from "~/containers/Activite/Scrum/Solution/Solution";
+import Resultat from "~/containers/Activite/Scrum/Resultat/Resultat";
 const ScrumRoutes = () => {
   return (
     <Switch>

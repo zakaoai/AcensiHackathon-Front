@@ -7,11 +7,11 @@ import { DragDropContext } from "react-beautiful-dnd";
 import { useParams } from "react-router";
 import styled from "styled-components";
 import { addSprint, deleteSprint, onDragEnd } from "./utils";
-import Backlog from "/components/Backlog/Backlog";
+import Backlog from "~/components/Backlog/Backlog";
 
-import SprintLine from "/components/SprintLine/SprintLine";
-import CardContext from "/contexts/CardContext";
-import useScrumJeux from "/hooks/useScrumJeux";
+import SprintLine from "~/components/SprintLine/SprintLine";
+import CardContext from "~/contexts/CardContext";
+import useScrumJeux from "~/hooks/useScrumJeux";
 import ScrumScore from "../ScrumScore/ScrumScore";
 
 const SprintWrapper = styled.div`

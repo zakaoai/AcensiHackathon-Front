@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { DragDropContext } from "react-beautiful-dnd";
 
-import CardContainer from "/components/CardContainer/CardContainer";
+import CardContainer from "~/components/CardContainer/CardContainer";
 
 // fake data generator
 const getItems = count =>

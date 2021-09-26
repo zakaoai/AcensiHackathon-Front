@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import ScrumUserContext from "/contexts/ScrumUserContext";
+import ScrumUserContext from "~/contexts/ScrumUserContext";
 
 const useScrumScore = () => {
   const { userState } = useContext(ScrumUserContext);

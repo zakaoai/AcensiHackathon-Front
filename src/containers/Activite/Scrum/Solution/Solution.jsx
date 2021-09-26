@@ -1,15 +1,15 @@
 import React from "react";
-import { PostItList } from "/components/CardContainer/CardContainer";
-import { PostItCard } from "/components/Card/Card";
-import SprintLineHeader from "/components/SprintLine/SprintLineHeader";
-import useScrumSolution from "/hooks/useScrumSolution";
+import { PostItList } from "~/components/CardContainer/CardContainer";
+import { PostItCard } from "~/components/Card/Card";
+import SprintLineHeader from "~/components/SprintLine/SprintLineHeader";
+import useScrumSolution from "~/hooks/useScrumSolution";
 import SolutionMessage from "./SolutionsMessage/SolutionMessage";
 import { useParams } from "react-router";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
 import ScrumScore from "../ScrumScore/ScrumScore";
-import SiteMap from "/routes/SiteMap";
+import SiteMap from "~/routes/SiteMap";
 
 const Solution = () => {
   let { gameId } = useParams();

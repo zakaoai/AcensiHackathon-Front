@@ -33,13 +33,13 @@ module.exports = {
   resolve: {
     extensions: ["*", ".js", ".jsx"],
     alias: {
-      "": paths.src
+      "~": paths.src
     }
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "Acensi Hackathon Solidaire",
+      title: "Cold Library App",
       template: paths.src + "/index.html", // template file
       filename: "index.html" // output file
     })

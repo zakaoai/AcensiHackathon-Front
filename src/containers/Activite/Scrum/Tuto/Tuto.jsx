@@ -6,11 +6,11 @@ import { DragDropContext } from "react-beautiful-dnd";
 import styled from "styled-components";
 import Rules from "./Rules";
 import { onDragEnd } from "./utils";
-import Backlog from "/components/Backlog/Backlog";
+import Backlog from "~/components/Backlog/Backlog";
 
-import SprintLine from "/components/SprintLine/SprintLine";
-import CardContext from "/contexts/CardContext";
-import useScrumJeux from "/hooks/useScrumJeux";
+import SprintLine from "~/components/SprintLine/SprintLine";
+import CardContext from "~/contexts/CardContext";
+import useScrumJeux from "~/hooks/useScrumJeux";
 import { Link } from "react-router-dom";
 
 const SprintWrapper = styled.div`

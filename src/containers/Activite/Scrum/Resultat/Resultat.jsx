@@ -1,8 +1,8 @@
 import React from "react";
-import useScrumScore from "/hooks/useScrumScore";
+import useScrumScore from "~/hooks/useScrumScore";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import SiteMap from "/routes/SiteMap";
+import SiteMap from "~/routes/SiteMap";
 
 const Resultat = () => {
   const { userPoints } = useScrumScore();

@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import Slide1 from "./Slide1";
-import SiteMap from "/routes/SiteMap";
+import SiteMap from "~/routes/SiteMap";
 
 const Intro = () => {
   let { slideId } = useParams();

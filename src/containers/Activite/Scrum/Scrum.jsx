@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import ScrumUserContext from "/contexts/ScrumUserContext";
+import ScrumUserContext from "~/contexts/ScrumUserContext";
 
-import ScrumRoutes from "/routes/ScrumRoutes";
+import ScrumRoutes from "~/routes/ScrumRoutes";
 
 const Scrum = () => {
   const [userState, setUserState] = useState({ gameScores: [] });
