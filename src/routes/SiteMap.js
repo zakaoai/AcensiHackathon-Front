@@ -18,7 +18,7 @@ const SiteMap = {
   },
   INGE_AFFAIRE: {
     path: "/app/inge-affaire",
-    label: "Ingénieur d'affaire"
+    label: "Ingénieur d'affaires"
   },
   CREDIT: {
     path: "/app/credit",
