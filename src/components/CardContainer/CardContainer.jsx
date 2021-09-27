@@ -23,7 +23,7 @@ const CardContainer = ({ id, cards, currentCardPoints, maxSprintPoints }) => {
         const card = cardsList.find(card => card.id == snapshot.draggingOverWith);
 
         const isOverMaxSprintPoints =
-          snapshot.draggingFromThisWith === undefined && currentCardPoints + card?.cout > maxSprintPoints;
+          !snapshot.draggingFromThisWith && currentCardPoints + card?.cout > maxSprintPoints;
 
         return (
           <PostItList

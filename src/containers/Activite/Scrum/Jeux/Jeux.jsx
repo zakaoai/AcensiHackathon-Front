@@ -33,7 +33,7 @@ const FlexCenter = styled.div`
 
 const Jeux = () => {
   const { gameId } = useParams();
-  const { itemsMap, setItemsMap, sprintPoints, postitList, envoyerScore } = useScrumJeux(gameId);
+  const { itemsMap, setItemsMap, sprintPoints, postitList, envoyerScore } = useScrumJeux(gameId, true);
 
   return (
     <>
